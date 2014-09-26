@@ -7,6 +7,7 @@ import (
 	log "ngrok/log"
 	"ngrok/msg"
 	"ngrok/util"
+	"ngrok/version"
 	"os"
 	"runtime/debug"
 	"time"
@@ -104,6 +105,10 @@ func Main() {
 
 	// init logging
 	log.LogTo(opts.logto)
+
+
+        log.Info("version: %s", version.MajorMinor())
+
 
 	// seed random number generator
 	seed, err := util.RandomSeed()
